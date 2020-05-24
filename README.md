@@ -5,12 +5,12 @@
 ===
 
 ## 목차
-[1. 가상 개발환경 만들기 (feat.Django)](https://github.com/KaJaeHyeob/BigDataVisualize/blob/master/README.md#1-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-featdjango))
+[1. 가상 개발환경 만들기 (feat.Django)](#1.-가상 개발환경 만들기-(feat.Django)))
 2. MVT 패턴에 따라 웹 서비스 개발
 
 -----
 
-### #1. 가상 개발환경 만들기 (feat.Django)
+### 1. 가상 개발환경 만들기 (feat.Django)
 주의) Mac OS 기준
 
 1) 가상 개발환경을 설치할 디렉토리 생성
