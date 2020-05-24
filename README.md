@@ -2,13 +2,9 @@
 
 빅데이터 시각화 웹 서비스 개발 / Django 프레임워크 / MVT 패턴
 
-===
-
 ## 목차
-[1. 가상 개발환경 만들기 (feat.Django)](#1.-가상 개발환경 만들기-(feat.Django)))
-2. MVT 패턴에 따라 웹 서비스 개발
-
------
+[1. 가상 개발환경 만들기 (feat.Django)](https://github.com/KaJaeHyeob/BigDataVisualize#1-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-featdjango)
+[2. MVT 패턴에 따라 웹 서비스 개발](https://github.com/KaJaeHyeob/BigDataVisualize#2-mvt-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C)
 
 ### 1. 가상 개발환경 만들기 (feat.Django)
 주의) Mac OS 기준
@@ -45,4 +41,5 @@ python3 manage.py runserver
 
 ### 2. MVT 패턴에 따라 웹 서비스 개발
 
+1) 
 
