@@ -13,18 +13,18 @@
    
 ## 1. 가상 개발환경 만들기 (feat.Django)
 주의) Mac OS 기준
-   
+
 ### 1) 가상 개발환경을 설치할 디렉토리 생성
 ```
 mkdir dir_name
 ```
-   
+##
 ### 2) 디렉토리 안에 비어있는 가상 개발환경 생성
 ```
 cd dir_name
 python -m venv venv_name
 ```
-   
+##
 ### 3) 가상 개발환경 활성화 및 Django 설치
 ```
 source venv_name/bin/activate
@@ -32,12 +32,13 @@ pip install django
 ```
    
 <img width="1236" alt="capture1" src="https://user-images.githubusercontent.com/62693219/82775784-b56dd580-9e83-11ea-8f14-77141e47a23b.png">
-   
+
+##
 ### 4) Django 사용할 프로젝트 디렉토리 생성
 ```
 django-admin startproject project_dir_name
 ```
-   
+##
 ### 5) 서버 구동 및 확인
 ```
 cd project_dir_name
@@ -50,6 +51,7 @@ python3 manage.py runserver
    
 <img width="1146" alt="capture3" src="https://user-images.githubusercontent.com/62693219/82748422-aa139f00-9ddc-11ea-94bb-d56d5c1c3b93.png">
 
+##
 ### 6) 애플리케이션 개발 시작
 ```
 python manage.py startapp app_name
@@ -60,7 +62,7 @@ python manage.py startapp app_name
 -----
    
 ## 2. MVT 패턴에 따라 웹 서비스 개발
-   
+
 ### 1) MVT 패턴 구상
 모델(Model) : DB 접근 및 비즈니스 로직 수행
 * 클라이언트로부터 받은 csv파일을 로컬저장소에 저장
