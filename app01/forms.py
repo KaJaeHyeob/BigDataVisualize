@@ -6,5 +6,6 @@ class RequestForm(forms.ModelForm):
     class Meta:
         model = FileRequest
         fields = {
-            'title', 'fileName'
+            'title',
+            'fileName'
         }
