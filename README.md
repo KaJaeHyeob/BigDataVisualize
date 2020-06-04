@@ -6,8 +6,10 @@
    
 ## 목차
 [1. 가상 개발환경 만들기 (feat.Django)](https://github.com/KaJaeHyeob/BigDataVisualize#1-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-featdjango)
+
+[2. 데이터베이스 설치하기 (feat. MySQL)]
    
-[2. MVT 패턴에 따라 웹 서비스 개발](https://github.com/KaJaeHyeob/BigDataVisualize#2-mvt-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C)
+[3. MVT 패턴에 따라 웹 서비스 개발](https://github.com/KaJaeHyeob/BigDataVisualize#2-mvt-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C)
    
 -----
    
@@ -64,7 +66,70 @@ python manage.py startapp app_name
 
 -----
 
-## 2. MVT 패턴에 따라 웹 서비스 개발
+## 2. 데이터베이스 설치하기 (feat. MySQL)
+주의) Mac OS 기준. 다양한 데이터베이스로 가능하나 MySQL로 진행. Homebrew 설치는 생략
+
+### 1) 기존 데이터베이스 삭제 (위험! 필요한 경우에만 할 것!)
+
+본인만 그런건지 모르겠으나, 다양한 데이터베이스를 겪다 보니 종류 및 버전별로 뒤범벅이었다.
+
+어떻게든 지우지 않고 진행하려 했으나, 계속해서 오류가 발생하였고, 어차피 서버용도 아니고 개발용이니까 싹 다 갈아엎기로 했다.
+
+데이터베이스 종류, 버전, 설치방식(brew 설치, 홈페이지 dmg파일 설치 등)에 따라 저장경로가 다르기 때문에, 꼼꼼히 rm -rf를 진행하였다.
+
+##
+### 2) MySQL 설치
+```
+brew install mysql
+```
+<img width="837" alt="capture2_1" src="https://user-images.githubusercontent.com/62693219/83735969-f9cf5180-a68b-11ea-8e3f-de80ed1cc2d1.png">
+
+##
+### 3) MySQL 서비스 시작
+```
+brew services start mysql
+```
+<img width="837" alt="capture2_2" src="https://user-images.githubusercontent.com/62693219/83735975-fcca4200-a68b-11ea-8ddf-6dad32dc8c52.png">
+
+##
+### 4) MySQL 접속
+첫 접속일 경우, 아래와 같이 접속 후 비밀번호 설정
+```
+mysql -u root
+```
+<img width="837" alt="capture2_3" src="https://user-images.githubusercontent.com/62693219/83735978-fdfb6f00-a68b-11ea-83d9-28ea978da1ea.png">
+
+첫 접속이 아닐 경우, 아래와 같이 접속 후 비밀번호 입력
+```
+mysql -u root -p
+```
+<img width="837" alt="capture2_4" src="https://user-images.githubusercontent.com/62693219/83735983-fe940580-a68b-11ea-93ce-e26f1b0facdb.png">
+
+새로운 유저를 만들어서 사용하는 것도 가능하지만, 생략하겠다.
+
+##
+### 5) 데이터베이스 생성
+```
+CREATE DATABASE database_name;
+```
+<img width="837" alt="capture2_5" src="https://user-images.githubusercontent.com/62693219/83735984-ff2c9c00-a68b-11ea-9e48-d2565e65ec40.png">
+
+##
+### 6) 데이터베이스 조회
+```
+SHOW DATABASES;
+```
+<img width="837" alt="capture2_6" src="https://user-images.githubusercontent.com/62693219/83735985-ffc53280-a68b-11ea-9bb0-c374fe98640a.png">
+
+이후 데이터베이스 관련된 모든 작업은 Django 프레임워크의 모델이 자동으로 수행해준다.
+
+이를 위해 settings.py에서 데이터베이스 정보 설정, 터미널에서 마이그레이션 명령어를 통한 테이블 업데이트가 필요하다.
+
+이에 대한 내용은 뒤에서 다시 설명하겠다.
+
+-----
+
+## 3. MVT 패턴에 따라 웹 서비스 개발
 
 ### 1) MVT 패턴 구상
 
@@ -75,17 +140,19 @@ python manage.py startapp app_name
 4. 이미지 파일경로를 DB에 저장
 5. 템플릿에게 이미지 파일경로 전달
 
+##
 #### 뷰(view) : 모델과 템플릿 상호작용 관리 (HTTP 요청을 받고 알맞은 HTTP 응답을 보냄)
 1. HTTP 요청에 따라 알맞은 뷰가 호출됨 (urls.py 통해서 이뤄짐)
 2. 뷰는 모델을 사용하여 비즈니스 로직을 수행하고, 클라이언트에게 템플릿을 반환함으로써 HTTP 응답
 
+##
 #### 템플릿(Templete) : 동적 웹 페이지 생성 (뷰에서 render() 통해서 클라이언트에게 제공)
 1. csv파일을 안 받은 경우, form을 포함한 동적 웹 페이지 제공
 2. csv파일을 받은 경우, 이미지 파일을 포함한 동적 웹 페이지 제공
 
 
 
-
+##
 참고 : [django](https://docs.djangoproject.com/ko/3.0/intro/tutorial01/)
 
 
