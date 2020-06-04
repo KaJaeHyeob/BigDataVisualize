@@ -30,8 +30,6 @@ python -m venv venv_name
 source venv_name/bin/activate
 pip install django
 ```
-   
-<img width="1236" alt="capture1" src="https://user-images.githubusercontent.com/62693219/82775784-b56dd580-9e83-11ea-8f14-77141e47a23b.png">
 
 ##
 ### 4) Django 사용할 프로젝트 디렉토리 생성
@@ -45,11 +43,7 @@ cd project_dir_name
 python3 manage.py runserver
 ```
    
-<img width="1192" alt="capture2" src="https://user-images.githubusercontent.com/62693219/82775795-bf8fd400-9e83-11ea-8333-b9e0ed4502bb.png">
-   
 브라우저에서 localhost:8000 접속 시 다음과 같은 화면이 나오면 성공
-   
-<img width="1146" alt="capture3" src="https://user-images.githubusercontent.com/62693219/82748422-aa139f00-9ddc-11ea-94bb-d56d5c1c3b93.png">
 
 ##
 ### 6) 애플리케이션 개발 시작
@@ -57,21 +51,28 @@ python3 manage.py runserver
 python manage.py startapp app_name
 ```
    
-<img width="1236" alt="capture4" src="https://user-images.githubusercontent.com/62693219/82775807-c74f7880-9e83-11ea-82e5-9c158b1f7299.png">
-   
 -----
    
 ## 2. MVT 패턴에 따라 웹 서비스 개발
 
 ### 1) MVT 패턴 구상
-모델(Model) : DB 접근 및 비즈니스 로직 수행
-* 클라이언트로부터 받은 csv파일을 로컬저장소에 저장
-* 저장한 csv파일의 파일경로를 DB에 저장
-* csv파일을 
 
-뷰(view) : 모델과 템플릿 상호작용 관리
--> 
+#### 모델(Model) : DB 접근 (비즈니스 로직 수행을 가능하게 함)
+1. 클라이언트로부터 받은 csv파일을 로컬저장소에 저장
+2. 저장한 csv파일의 파일경로를 DB에 저장
+3. csv파일의 데이터 시각화 이미지 생성 및 로컬저장소에 저장
+4. 이미지 파일경로를 DB에 저장
+5. 템플릿에게 이미지 파일경로 전달
 
-템플릿(Templete) : 동적 웹 페이지 생성
--> 
+#### 뷰(view) : 모델과 템플릿 상호작용 관리 (HTTP 요청을 받고 알맞은 HTTP 응답을 보냄)
+1. HTTP 요청에 따라 알맞은 뷰가 호출됨 (urls.py 통해서 이뤄짐)
+2. 뷰는 모델을 사용하여 비즈니스 로직을 수행하고, 클라이언트에게 템플릿을 반환함으로써 HTTP 응답
+
+#### 템플릿(Templete) : 동적 웹 페이지 생성 (뷰에서 render() 통해서 클라이언트에게 제공)
+1. csv파일을 안 받은 경우, form을 포함한 동적 웹 페이지 제공
+2. csv파일을 받은 경우, 이미지 파일을 포함한 동적 웹 페이지 제공
+
+
+참고 : [django](https://docs.djangoproject.com/ko/3.0/intro/tutorial01/)
+
 
