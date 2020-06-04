@@ -153,6 +153,6 @@ SHOW DATABASES;
 
 
 ##
-참고 : [django](https://docs.djangoproject.com/ko/3.0/intro/tutorial01/)
+참고 : [django 공식 홈페이지](https://docs.djangoproject.com/ko/3.0/intro/tutorial01/), [jesse님](https://blog.jesse.kim/post/26)
 
 
