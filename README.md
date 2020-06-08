@@ -1,6 +1,6 @@
 # BigDataVisualize
    
-빅데이터 시각화 웹 서비스 개발 / Django 프레임워크 / MVT 패턴
+빅데이터 시각화 웹 서비스 개발 | Django 프레임워크 | MVT 패턴
    
 -----
    
