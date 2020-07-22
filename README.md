@@ -123,18 +123,18 @@ SHOW DATABASES;
 
 ### 1) MVT 패턴 구상
 
-#### 모델(Model) : DB 접근 (비즈니스 로직 수행을 가능하게 함)
+#### [모델(Model) : DB 접근 (비즈니스 로직 수행을 가능하게 함)](https://github.com/KaJaeHyeob/BigDataVisualize/blob/master/app01/models.py)
 1. 클라이언트로부터 받은 csv파일을 로컬저장소에 저장
 2. 저장한 csv파일의 파일경로를 DB에 저장
 3. csv파일의 데이터 시각화 이미지 생성 및 로컬저장소에 저장 (복잡함을 줄이기 위해 모듈로 분할함)
 4. 이미지 파일경로를 DB에 저장
 5. 템플릿에게 이미지 파일경로 전달
 
-#### 뷰(view) : 모델과 템플릿 상호작용 관리 (HTTP 요청을 받고 알맞은 HTTP 응답을 보냄)
+#### [뷰(view) : 모델과 템플릿 상호작용 관리 (HTTP 요청을 받고 알맞은 HTTP 응답을 보냄)](https://github.com/KaJaeHyeob/BigDataVisualize/blob/master/app01/views.py)
 1. HTTP 요청에 따라 알맞은 뷰가 호출됨 (urls.py 통해서 이뤄짐)
 2. 뷰는 모델을 사용하여 비즈니스 로직을 수행하고, 클라이언트에게 템플릿을 반환함으로써 HTTP 응답
 
-#### 템플릿(Template) : 동적 웹 페이지 생성 (뷰에서 render() 통해서 클라이언트에게 제공)
+#### [템플릿(Template) : 동적 웹 페이지 생성 (뷰에서 render() 통해서 클라이언트에게 제공)](https://github.com/KaJaeHyeob/BigDataVisualize/tree/master/app01/templates/app01)
 1. 클라이언트에게 알맞은 동적 웹 페이지 제공 (csv파일 요청, 이미지 제공)
 
 -----
