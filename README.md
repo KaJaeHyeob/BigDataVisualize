@@ -22,7 +22,6 @@ mkdir dir_name
 ```
 <img width="837" alt="capture1" src="https://user-images.githubusercontent.com/62693219/83730054-7f9acf00-a683-11ea-8b5e-c100ee02335e.png">
 
-##
 ### 2) 디렉토리 안에 비어있는 가상 개발환경 생성
 ```
 cd dir_name
@@ -30,7 +29,6 @@ python -m venv venv_name
 ```
 <img width="837" alt="capture2" src="https://user-images.githubusercontent.com/62693219/83730063-8295bf80-a683-11ea-9c1f-a033731e2e44.png">
 
-##
 ### 3) 가상 개발환경 활성화 및 Django 설치
 ```
 source venv_name/bin/activate
@@ -38,14 +36,12 @@ pip install django
 ```
 <img width="837" alt="capture3" src="https://user-images.githubusercontent.com/62693219/83730065-83c6ec80-a683-11ea-846e-a71ccc662e02.png">
 
-##
 ### 4) Django 사용할 프로젝트 디렉토리 생성
 ```
 django-admin startproject project_dir_name
 ```
 <img width="837" alt="capture4" src="https://user-images.githubusercontent.com/62693219/83730067-845f8300-a683-11ea-84e4-7c2719d888d2.png">
 
-##
 ### 5) 서버 구동 및 확인
 ```
 cd project_dir_name
@@ -57,7 +53,6 @@ python3 manage.py runserver
 
 <img width="1146" alt="capture6" src="https://user-images.githubusercontent.com/62693219/83730071-8590b000-a683-11ea-8429-77a56b97d694.png">
 
-##
 ### 6) 애플리케이션 개발 시작
 ```
 python manage.py startapp app_name
@@ -77,21 +72,18 @@ python manage.py startapp app_name
 
 데이터베이스 종류, 버전, 설치방식(brew 설치, 홈페이지 dmg파일 설치 등)에 따라 저장경로가 다르기 때문에, 꼼꼼히 또한 조심스럽게 rm -rf를 진행하였다.
 
-##
 ### 2) MySQL 설치
 ```
 brew install mysql
 ```
 <img width="837" alt="capture2_1" src="https://user-images.githubusercontent.com/62693219/83735969-f9cf5180-a68b-11ea-8e3f-de80ed1cc2d1.png">
 
-##
 ### 3) MySQL 서비스 시작
 ```
 brew services start mysql
 ```
 <img width="837" alt="capture2_2" src="https://user-images.githubusercontent.com/62693219/83735975-fcca4200-a68b-11ea-8ddf-6dad32dc8c52.png">
 
-##
 ### 4) MySQL 접속
 첫 접속일 경우, 아래와 같이 접속 후 비밀번호 설정
 ```
@@ -107,14 +99,12 @@ mysql -u root -p
 
 새로운 유저를 만들어서 사용하는 것도 가능하지만, 생략하겠다.
 
-##
 ### 5) 데이터베이스 생성
 ```
 CREATE DATABASE database_name;
 ```
 <img width="837" alt="capture2_5" src="https://user-images.githubusercontent.com/62693219/83735984-ff2c9c00-a68b-11ea-9e48-d2565e65ec40.png">
 
-##
 ### 6) 데이터베이스 조회
 ```
 SHOW DATABASES;
@@ -140,19 +130,16 @@ SHOW DATABASES;
 4. 이미지 파일경로를 DB에 저장
 5. 템플릿에게 이미지 파일경로 전달
 
-##
 #### 뷰(view) : 모델과 템플릿 상호작용 관리 (HTTP 요청을 받고 알맞은 HTTP 응답을 보냄)
 1. HTTP 요청에 따라 알맞은 뷰가 호출됨 (urls.py 통해서 이뤄짐)
 2. 뷰는 모델을 사용하여 비즈니스 로직을 수행하고, 클라이언트에게 템플릿을 반환함으로써 HTTP 응답
 
-##
 #### 템플릿(Templete) : 동적 웹 페이지 생성 (뷰에서 render() 통해서 클라이언트에게 제공)
 1. csv파일을 안 받은 경우, form을 포함한 동적 웹 페이지 제공
 2. csv파일을 받은 경우, 이미지 파일을 포함한 동적 웹 페이지 제공
 
+-----
 
-
-##
 참고 : [django 공식 홈페이지](https://docs.djangoproject.com/ko/3.0/intro/tutorial01/), [jesse님](https://blog.jesse.kim/post/26)
 
 
