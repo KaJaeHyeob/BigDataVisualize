@@ -1,16 +1,30 @@
-# BigDataVisualize
-   
-빅데이터 시각화 웹 서비스 개발 | Django 프레임워크 | MVT 패턴
-   
------
-   
-## 목차
-[1. 가상 개발환경 만들기 (feat.Django)](https://github.com/KaJaeHyeob/BigDataVisualize#1-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-featdjango)
+# BigDataVisualize    
 
-[2. 데이터베이스 설치하기 (feat. MySQL)](https://github.com/KaJaeHyeob/BigDataVisualize/blob/master/README.md#2-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-feat-mysql)
-   
-[3. MVT 패턴에 따라 웹 서비스 개발](https://github.com/KaJaeHyeob/BigDataVisualize#3-mvt-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C)
-   
+<details>
+<summary>목차 및 링크</summary>
+<div markdown="1">
+
+> [1. 가상 개발환경 만들기 (feat.Django)](https://github.com/KaJaeHyeob/BigDataVisualize#1-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-featdjango)
+> > [1) 가상 개발환경을 설치할 디렉토리 생성]()
+> > [2) 디렉토리 안에 가상 개발환경 생성]()
+> > [3) 가상 개발환경 활성화 및 Django 설치]()
+> > [4) 프로젝트 디렉토리 생성]()
+> > [5) 서버 구동 및 확인]()
+> > [6) 애플리케이션 개발 시작]()
+> 
+> [2. 데이터베이스 설치하기 (feat. MySQL)](https://github.com/KaJaeHyeob/BigDataVisualize/blob/master/README.md#2-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-feat-mysql)
+> > [1) MySQL 설치]()
+> > [2) MySQL 서비스 실행]()
+> > [3) MySQL 접속]()
+> > [4) 데이터베이스 생성]()
+> > [5) 데이터베이스 조회]()
+> 
+> [3. MVT 패턴에 따라 웹 서비스 개발](https://github.com/KaJaeHyeob/BigDataVisualize#3-mvt-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C)
+> > [1) MVT 패턴 구상]()
+
+</div>
+</details>
+
 -----
    
 ## 1. 가상 개발환경 만들기 (feat.Django)
@@ -22,7 +36,7 @@ mkdir dir_name
 ```
 <img width="837" alt="capture1" src="https://user-images.githubusercontent.com/62693219/83730054-7f9acf00-a683-11ea-8b5e-c100ee02335e.png">
 
-### 2) 디렉토리 안에 비어있는 가상 개발환경 생성
+### 2) 디렉토리 안에 가상 개발환경 생성
 ```
 cd dir_name
 python -m venv venv_name
@@ -36,7 +50,7 @@ pip install django
 ```
 <img width="837" alt="capture3" src="https://user-images.githubusercontent.com/62693219/83730065-83c6ec80-a683-11ea-846e-a71ccc662e02.png">
 
-### 4) Django 사용할 프로젝트 디렉토리 생성
+### 4) 프로젝트 디렉토리 생성
 ```
 django-admin startproject project_dir_name
 ```
@@ -64,27 +78,19 @@ python manage.py startapp app_name
 ## 2. 데이터베이스 설치하기 (feat. MySQL)
 주의) Mac OS 기준. 다양한 데이터베이스로 가능하나 MySQL로 진행. Homebrew 설치는 생략
 
-### 1) 기존 데이터베이스 삭제 (위험! 필요한 경우에만 할 것!)
-
-다양한 데이터베이스를 겪다 보니 종류 및 버전별로 뒤범벅이었다.
-
-어떻게든 지우지 않고 진행하려 했으나, 계속해서 오류가 발생하였고, 일부분 갈아엎기로 했다.
-
-데이터베이스 종류, 버전, 설치방식(brew 설치, dmg파일 설치 등)에 따라 저장경로가 다르기 때문에, 꼼꼼하고 조심스럽게 rm -rf를 진행하였다.
-
-### 2) MySQL 설치
+### 1) MySQL 설치
 ```
 brew install mysql
 ```
 <img width="837" alt="capture2_1" src="https://user-images.githubusercontent.com/62693219/83735969-f9cf5180-a68b-11ea-8e3f-de80ed1cc2d1.png">
 
-### 3) MySQL 서비스 시작
+### 2) MySQL 서비스 실행
 ```
 brew services start mysql
 ```
 <img width="837" alt="capture2_2" src="https://user-images.githubusercontent.com/62693219/83735975-fcca4200-a68b-11ea-8ddf-6dad32dc8c52.png">
 
-### 4) MySQL 접속
+### 3) MySQL 접속
 첫 접속일 경우, 아래와 같이 접속 후 비밀번호 설정
 ```
 mysql -u root
@@ -97,25 +103,22 @@ mysql -u root -p
 ```
 <img width="837" alt="capture2_4" src="https://user-images.githubusercontent.com/62693219/83735983-fe940580-a68b-11ea-93ce-e26f1b0facdb.png">
 
-새로운 유저를 만들어서 사용하는 것도 가능하지만, 생략하겠다.
+새로운 유저를 만들어서 사용하는 것도 가능하지만, 일단은 생략하겠다.    
 
-### 5) 데이터베이스 생성
+### 4) 데이터베이스 생성
 ```
 CREATE DATABASE database_name;
 ```
 <img width="837" alt="capture2_5" src="https://user-images.githubusercontent.com/62693219/83735984-ff2c9c00-a68b-11ea-9e48-d2565e65ec40.png">
 
-### 6) 데이터베이스 조회
+### 5) 데이터베이스 조회
 ```
 SHOW DATABASES;
 ```
 <img width="837" alt="capture2_6" src="https://user-images.githubusercontent.com/62693219/83735985-ffc53280-a68b-11ea-9bb0-c374fe98640a.png">
 
-이후 데이터베이스 관련된 모든 작업은 Django 프레임워크의 모델이 자동으로 수행해준다.
-
-이를 위해 settings.py에서 데이터베이스 정보 설정, 터미널에서 마이그레이션 명령어를 통한 테이블 업데이트가 필요하다.
-
-이에 대한 내용은 뒤에서 다시 설명하겠다.
+이후 몇 가지 설정만 마치면 데이터베이스 관련된 모든 작업은 Django 프레임워크의 모델이 자동으로 수행해준다.    
+settings.py 파일 내에 데이터베이스 정보 설정, 터미널에서 마이그레이션 명령어를 통한 테이블 업데이트가 필요한데, 이에 대한 내용은 뒤에서 다시 설명하겠다.    
 
 -----
 
